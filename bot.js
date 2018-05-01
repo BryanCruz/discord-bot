@@ -44,8 +44,8 @@ client.on('message', message => {
   // checks if the args lenght matches the minimum amount that is required
   // if not, shows the usage of that command
   if(command.minArgs > args.length) {
-    message.channel.send(`You didn\'t provided enough arguments, ${message.author}!\n`);
-    client.commands.get('usage').execute(message, [command.name], client);
+    message.channel.send(`You didn\'t provided enough arguments, ${message.author}!\n` +
+                         `To see how to use this command, use *!help ${command.name}*`);
     return;
   }
 
